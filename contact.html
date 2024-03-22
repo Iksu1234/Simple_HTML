@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Viesti</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="container">
+      <div id="header">
+        <h1>Karelia ammattikorkeakoulu - Teemu Ikonen</h1>
+      </div>
+      <div id="nav">
+        <ul>
+          <li><a href="index.html">Etusivu</a></li>
+          <li><a href="about.html">Tietoa</a></li>
+          <li><a href="opintojaksot.html">Tämänhetkiset kurssit</a></li>
+          <li><a class="active" href="contact.html">Viesti</a></li>
+        </ul>
+      </div>
+      <div id="main">
+        <h1>Viesti</h1>
+        <script>
+          function sendEmail() {
+            let subjectTxt = document.getElementById("subjectTxt").value;
+            let emailTxt = document.getElementById("emailTxt").value;
+            let msgTxt = document.getElementById("msgTxt").value;
+            console.log(subjectTxt + " " + emailTxt + " " + msgTxt);
+            window.open(
+              "mailto:" +
+                emailTxt +
+                "?subject=" +
+                subjectTxt +
+                "&body=" +
+                msgTxt
+            );
+          }
+        </script>
+        <div>
+          <label>Aihe</label><br />
+          <input id="subjectTxt" />
+        </div>
+        <div>
+          <label>Sähköposti</label><br />
+          <input value="esimerkkiSäpö@live.fi" id="emailTxt" />
+        </div>
+        <div>
+          <label>Viesti</label><br />
+          <textarea id="msgTxt"></textarea>
+        </div>
+        <button onclick="sendEmail()" type="submit">Lähetä</button>
+      </div>
+      <div id="sidebar">
+        <h3>Ajankohtaista</h3>
+        Kevätkausi on alkanut.
+      </div>
+      <div class="clr"></div>
+      <div id="footer"></div>
+      <p>Copyright &copy; 2024</p>
+    </div>
+  </body>
+</html>
